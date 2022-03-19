@@ -24,7 +24,7 @@ module Jekyll
     def render(context)
       source = context.registers[:site].config["source"]
       tar_name = "#{source}/#{@archive_name}"
-      info "archive_display: tar_name=#{tar_name}"
+      Jekyll.info "archive_display: tar_name=#{tar_name}"
       traverse_tar(tar_name)
     end
 
