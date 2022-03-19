@@ -95,7 +95,7 @@ jekyll_archive_display (1.0.0)
     License: MIT
     Installed at: /home/mslinn/.gems
 
-    Generates Jekyll logger with colored output.
+    Jekyll tag plugin that lists the names and contents of each entry in a tar file.
 ```
 
 ### Build and Push to RubyGems
@@ -112,7 +112,10 @@ To release a new version,
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/mslinn/jekyll_archive_display.
+1. Fork the project
+2. Create a descriptively named feature branch
+3. Add your feature
+4. Submit a pull request
 
 
 ## License
