@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     jekyll_archive_display (1.0.0)
-      jekyll
+      jekyll (>= 3.5.0)
       jekyll_plugin_logger
       ruby-filemagic (= 0.7.3)
       rubyzip

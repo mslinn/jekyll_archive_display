@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 require "jekyll"
+require "jekyll_plugin_logger"
 require "rubygems/package"
 require "ruby-filemagic"
-require "jekyll_plugin_logger"
 require_relative "jekyll_archive_display/version"
 
 # Jekyll tag plugin that displays information about the contents of tar files
@@ -24,7 +24,7 @@ module Jekyll
     def render(context)
       source = context.registers[:site].config["source"]
       tar_name = "#{source}/#{@archive_name}"
-      Jekyll.info "archive_display: tar_name=#{tar_name}"
+      Jekyll.debug "archive_display: tar_name=#{tar_name}"
       traverse_tar(tar_name)
     end
 
@@ -77,4 +77,4 @@ module Jekyll
 end
 
 Liquid::Template.register_tag("archive_display", Jekyll::ArchiveDisplayTag)
-Jekyll.info "Loaded jekyll_archive_display plugin."
+Jekyll.info { "Loaded jekyll_archive_display plugin." }
