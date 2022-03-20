@@ -126,7 +126,7 @@ DEPENDENCIES
   bundler
   debase
   jekyll_archive_display!
-  rake (~> 13.0)
+  rake
   rspec
   rubocop (= 1.18.0)
   rubocop-jekyll

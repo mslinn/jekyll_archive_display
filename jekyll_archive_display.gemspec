@@ -31,6 +31,12 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r!\Aexe/!) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.post_install_message = <<~END_MESSAGE
+
+    Thanks for installing #{spec.name}!
+
+  END_MESSAGE
+
   spec.add_dependency "jekyll", ">= 3.5.0"
   spec.add_dependency "jekyll_plugin_logger"
   spec.add_dependency "ruby-filemagic", "= 0.7.3"
