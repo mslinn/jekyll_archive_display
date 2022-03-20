@@ -4,7 +4,6 @@ require "jekyll"
 require "jekyll_plugin_logger"
 require "rubygems/package"
 require "ruby-filemagic"
-require_relative "jekyll_archive_display/version"
 
 # Jekyll tag plugin that displays information about the contents of tar files
 module Jekyll
@@ -74,7 +73,8 @@ module Jekyll
       end
     end
   end
+
+  info { "Loaded jekyll_archive_display plugin." }
 end
 
 Liquid::Template.register_tag("archive_display", Jekyll::ArchiveDisplayTag)
-Jekyll.info { "Loaded jekyll_archive_display plugin." }

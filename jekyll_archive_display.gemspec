@@ -4,21 +4,10 @@ require_relative "lib/jekyll_archive_display/version"
 
 # rubocop:disable Metrics/BlockLength
 Gem::Specification.new do |spec|
-  spec.name = "jekyll_archive_display"
-  spec.version = JekyllArchiveDisplay::VERSION
   spec.authors = ["Mike Slinn"]
+  spec.bindir = "exe"
+  spec.name = "jekyll_archive_display"
   spec.email = ["mslinn@mslinn.com"]
-
-  spec.summary = "Jekyll tag plugin that lists the names and contents of each entry in a tar file."
-  spec.homepage = "https://github.com/mslinn/jekyll_archive_display"
-  spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.6.0"
-
-  spec.metadata["allowed_push_host"] = "https://rubygems.org"
-
-  spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = spec.homepage
-  spec.metadata["changelog_uri"] = "#{spec.homepage}/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -27,15 +16,27 @@ Gem::Specification.new do |spec|
       (f == __FILE__) || f.match(%r!\A(?:(?:bin|test|spec|features)/|\.(?:git|travis|circleci)|appveyor)!)
     end
   end
-  spec.bindir = "exe"
-  spec.executables = spec.files.grep(%r!\Aexe/!) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
 
+  spec.homepage = "https://github.com/mslinn/jekyll_archive_display"
+  spec.license = "MIT"
+  spec.metadata = {
+    "allowed_push_host" => "https://rubygems.org",
+    "bug_tracker_uri"   => "#{spec.homepage}/issues",
+    "changelog_uri"     => "#{spec.homepage}/CHANGELOG.md",
+    "homepage_uri"      => spec.homepage,
+    "source_code_uri"   => spec.homepage,
+  }
   spec.post_install_message = <<~END_MESSAGE
 
     Thanks for installing #{spec.name}!
 
   END_MESSAGE
+  spec.require_paths = ["lib"]
+  spec.required_ruby_version = ">= 2.6.0"
+  spec.summary = "Jekyll tag plugin that lists the names and contents of each entry in a tar file."
+  spec.version = JekyllArchiveDisplay::VERSION
+
+  spec.executables = spec.files.grep(%r!\Aexe/!) { |f| File.basename(f) }
 
   spec.add_dependency "jekyll", ">= 3.5.0"
   spec.add_dependency "jekyll_plugin_logger"
