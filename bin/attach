@@ -13,11 +13,5 @@ if [ ! -f "$1/_bin/debug" ]; then
   exit 1
 fi
 
-NAME="$( basename -s .git "$( git remote get-url origin )" )"
-
-# Sets VERSION:
-eval "$( grep VERSION "lib/$NAME/version.rb" | sed 's/ *//g' )"
-
-bundle exec rake build && \
-gem install "pkg/$NAME-$VERSION.gem" &&
+bundle exec rake install.local && \
 (cd "$1" || exit 1; _bin/debug)
