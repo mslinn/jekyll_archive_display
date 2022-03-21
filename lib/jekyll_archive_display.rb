@@ -65,10 +65,12 @@ module Jekyll
 
             tar_entry entry, file_magic
           end
-          return contents
+          result = contents
                    .compact
                    .sort_by { |entry| entry[:name] }
                    .map { |entry| display_entry entry }
+          Jekyll.debug { "traverse_tar: result = #{result}" }
+          result
         end
       end
     end
