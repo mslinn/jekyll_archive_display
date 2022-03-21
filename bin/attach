@@ -13,5 +13,7 @@ if [ ! -f "$1/_bin/debug" ]; then
   exit 1
 fi
 
+gem uninstall jekyll_archive_display
+
 bundle exec rake install:local && \
 (cd "$1" || exit 1; _bin/debug)
