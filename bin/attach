@@ -13,5 +13,5 @@ if [ ! -f "$1/_bin/debug" ]; then
   exit 1
 fi
 
-bundle exec rake install.local && \
+bundle exec rake install:local && \
 (cd "$1" || exit 1; _bin/debug)
