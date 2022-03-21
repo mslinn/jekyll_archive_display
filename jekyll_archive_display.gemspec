@@ -21,6 +21,7 @@ end
 # rubocop:disable Metrics/BlockLength
 Gem::Specification.new do |spec|
   files = GemSpecHelper.spec_files
+  github = "https://github.com/mslinn/jekyll_archive_display"
 
   spec.authors = ["Mike Slinn"]
   spec.bindir = "exe"
@@ -28,14 +29,14 @@ Gem::Specification.new do |spec|
   spec.email = ["mslinn@mslinn.com"]
   spec.executables = GemSpecHelper.spec_executables(files)
   spec.files = files
-  spec.homepage = "https://github.com/mslinn/jekyll_archive_display"
+  spec.homepage = "https://www.mslinn.com/blog/2020/10/03/jekyll-plugins.html"
   spec.license = "MIT"
   spec.metadata = {
     "allowed_push_host" => "https://rubygems.org",
-    "bug_tracker_uri"   => "#{spec.homepage}/issues",
-    "changelog_uri"     => "#{spec.homepage}/CHANGELOG.md",
+    "bug_tracker_uri"   => "#{github}/issues",
+    "changelog_uri"     => "#{github}/CHANGELOG.md",
     "homepage_uri"      => spec.homepage,
-    "source_code_uri"   => spec.homepage,
+    "source_code_uri"   => github,
   }
   spec.post_install_message = <<~END_MESSAGE
 
