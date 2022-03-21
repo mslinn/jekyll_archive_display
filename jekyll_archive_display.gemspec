@@ -25,6 +25,9 @@ Gem::Specification.new do |spec|
 
   spec.authors = ["Mike Slinn"]
   spec.bindir = "exe"
+  spec.description = <<~END_OF_DESC
+    Jekyll tag plugin that lists the names and contents of each entry in a tar file.
+  END_OF_DESC
   spec.name = "jekyll_archive_display"
   spec.email = ["mslinn@mslinn.com"]
   spec.executables = GemSpecHelper.spec_executables(files)
