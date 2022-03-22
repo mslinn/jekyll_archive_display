@@ -20,6 +20,7 @@ module Jekyll
     # @return [void]
     def initialize(tag_name, archive_name, tokens)
       super
+      @logger = PluginLogger.new
       @archive_name = archive_name.strip
     end
 
@@ -28,7 +29,7 @@ module Jekyll
     def render(context)
       source = context.registers[:site].config["source"]
       tar_name = "#{source}/#{@archive_name}"
-      Jekyll.debug "archive_display: tar_name=#{tar_name}"
+      @logger.debug "archive_display: tar_name=#{tar_name}"
       traverse_tar(tar_name)
     end
 
@@ -74,7 +75,7 @@ module Jekyll
                    .compact
                    .sort_by { |entry| entry[:name] }
                    .map { |entry| display_entry entry }
-          Jekyll.debug { "traverse_tar: result = #{result}" }
+          @logger.debug { "traverse_tar: result = #{result}" }
           result
         end
       end
@@ -82,6 +83,5 @@ module Jekyll
   end
 end
 
-Jekyll.info { "Loaded #{JekyllPluginArchiveDisplayName::PLUGIN_NAME} v#{JekyllArchiveDisplay::VERSION} plugin." }
-
+PluginMetaLogger.instance.info { "Loaded #{JekyllPluginArchiveDisplayName::PLUGIN_NAME} v#{JekyllArchiveDisplay::VERSION} plugin." }
 Liquid::Template.register_tag(JekyllPluginArchiveDisplayName::PLUGIN_NAME, Jekyll::ArchiveDisplayTag)

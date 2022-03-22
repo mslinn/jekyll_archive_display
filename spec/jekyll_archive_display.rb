@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
-require "jekyll"
 require_relative "../lib/jekyll_archive_display"
 
-RSpec.describe(Jekyll) do
+RSpec.describe Jekyll do
   include Jekyll
 
   let(:config) { instance_double("Configuration") }
