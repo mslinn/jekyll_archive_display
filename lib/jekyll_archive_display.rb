@@ -6,10 +6,12 @@ require "rubygems/package"
 require "ruby-filemagic"
 require_relative "jekyll_archive_display/version"
 
+module JekyllPluginArchiveDisplayName
+  PLUGIN_NAME = "archive_display"
+end
+
 # Jekyll tag plugin that displays information about the contents of tar files
 module Jekyll
-  PLUGIN_NAME = "jekyll_archive_display"
-
   # Executes a program and returns the output from STDOUT.
   class ArchiveDisplayTag < Liquid::Tag
     # @param tag_name [String] is the name of the tag, which we already know.
@@ -78,8 +80,8 @@ module Jekyll
       end
     end
   end
-
-  info { "Loaded #{PLUGIN_NAME} v#{JekyllArchiveDisplay::VERSION} plugin." }
 end
 
-Liquid::Template.register_tag("archive_display", Jekyll::ArchiveDisplayTag)
+Jekyll.info { "Loaded #{JekyllPluginArchiveDisplayName::PLUGIN_NAME} v#{JekyllArchiveDisplay::VERSION} plugin." }
+
+Liquid::Template.register_tag(JekyllPluginArchiveDisplayName::PLUGIN_NAME, Jekyll::ArchiveDisplayTag)
