@@ -19,7 +19,7 @@ module Jekyll
     # @param tokens [Liquid::ParseContext] tokenized command line
     # @return [void]
     def initialize(tag_name, archive_name, tokens)
-      super
+      super(tag_name, archive_name, tokens)
       @logger = PluginLogger.new
       @archive_name = archive_name.strip
     end
