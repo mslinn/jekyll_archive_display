@@ -19,7 +19,7 @@
       "cwd": "${workspaceRoot}",
       "debuggerPort": "1234",
       "name": "Debug Jekyll",
-      "program": "/usr/local/bin/jekyll",
+      "program": "/home/mslinn/.rbenv/shims/jekyll",
                    "args": [
                      "serve",
                      "--livereload_port", "35721",
