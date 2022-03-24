@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "jekyll_plugin_logger"
 require "rubygems/package"
 require "ruby-filemagic"
 require_relative "archive_display/version"
