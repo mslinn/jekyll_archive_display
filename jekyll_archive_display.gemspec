@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   END_OF_DESC
   spec.email = ["mslinn@mslinn.com"]
   spec.files = Dir[".rubocop.yml", "LICENSE.*", "Rakefile", "{lib,spec}/**/*", "*.gemspec", "*.md"]
-  spec.homepage = "https://www.mslinn.com/blog/2020/10/03/jekyll-plugins.html"
+  spec.homepage = "https://www.mslinn.com/blog/2020/10/03/jekyll-plugins.html#archiveDisplay"
   spec.license = "MIT"
   spec.metadata = {
     "allowed_push_host" => "https://rubygems.org",
@@ -40,9 +40,9 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rubyzip"
 
   spec.add_development_dependency "debase"
-  spec.add_development_dependency "rubocop-jekyll"
-  spec.add_development_dependency "rubocop-rake"
-  spec.add_development_dependency "rubocop-rspec"
+  # spec.add_development_dependency "rubocop-jekyll"
+  # spec.add_development_dependency "rubocop-rake"
+  # spec.add_development_dependency "rubocop-rspec"
   spec.add_development_dependency "ruby-debug-ide"
 end
 # rubocop:enable Metrics/BlockLength
