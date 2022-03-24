@@ -30,7 +30,7 @@ module Jekyll
       source = context.registers[:site].config["source"]
       tar_name = "#{source}/#{@archive_name}"
       @logger.debug "tar_name=#{tar_name}"
-      traverse_tar(tar_name).join("\n")
+      traverse_tar(tar_name)
     end
 
     private
@@ -76,6 +76,7 @@ module Jekyll
                    .compact
                    .sort_by { |entry| entry[:name] }
                    .map { |entry| display_entry entry }
+                   .join("\n")
           @logger.debug { "traverse_tar: result = #{result}" }
           result
         end
