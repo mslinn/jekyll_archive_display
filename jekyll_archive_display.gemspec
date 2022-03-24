@@ -31,6 +31,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.required_ruby_version = ">= 2.6.0"
   spec.summary = "Jekyll tag plugin that lists the names and contents of each entry in a tar file."
+  spec.test_files = spec.files.grep(%r!^(test|spec|features)/!)
   spec.version = JekyllArchiveDisplay::VERSION
 
   spec.add_dependency "jekyll", ">= 3.5.0"
