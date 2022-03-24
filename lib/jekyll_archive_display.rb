@@ -20,7 +20,7 @@ module Jekyll
     # @return [void]
     def initialize(tag_name, archive_name, tokens)
       super(tag_name, archive_name, tokens)
-      @logger = PluginLogger.new
+      @logger = PluginLogger.new(self)
       @archive_name = archive_name.strip
     end
 
