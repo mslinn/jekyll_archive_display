@@ -69,7 +69,7 @@ module Jekyll
           contents = tar.each.map do |entry|
             next if entry.file?
 
-            tar_entry entry, file_magic
+            tar_entry(entry, file_magic)
           end
           result = contents
                    .compact
