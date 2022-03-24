@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "../lib/jekyll_archive_display"
+require_relative "../lib/archive_display"
 
 RSpec.describe Jekyll do
   include Jekyll

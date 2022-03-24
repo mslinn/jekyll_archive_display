@@ -4,10 +4,10 @@ require "liquid"
 require "jekyll_plugin_logger"
 require "rubygems/package"
 require "ruby-filemagic"
-require_relative "jekyll_archive_display/version"
+require_relative "archive_display/version"
 
 module JekyllPluginArchiveDisplayName
-  PLUGIN_NAME = "jekyll_archive_display"
+  PLUGIN_NAME = "archive_display"
 end
 
 # Jekyll tag plugin that displays information about the contents of tar files
@@ -29,7 +29,7 @@ module Jekyll
     def render(context)
       source = context.registers[:site].config["source"]
       tar_name = "#{source}/#{@archive_name}"
-      @logger.debug "archive_display: tar_name=#{tar_name}"
+      @logger.debug "tar_name=#{tar_name}"
       traverse_tar(tar_name)
     end
 
@@ -84,4 +84,4 @@ module Jekyll
 end
 
 PluginMetaLogger.instance.info { "Loaded #{JekyllPluginArchiveDisplayName::PLUGIN_NAME} v#{JekyllArchiveDisplay::VERSION} plugin." }
-Liquid::Template.register_tag("archive_display", Jekyll::ArchiveDisplayTag)
+Liquid::Template.register_tag(JekyllPluginArchiveDisplayName::PLUGIN_NAME, Jekyll::ArchiveDisplayTag)
