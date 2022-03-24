@@ -59,6 +59,7 @@ module Jekyll
     # Walk through a `tar` file.
     #
     # Modified from this {https://gist.github.com/sinisterchipmunk/1335041/5be4e6039d899c9b8cca41869dc6861c8eb71f13 gist by sinisterchipmunk }.
+    # See https://docs.ruby-lang.org/en/2.6.0/Gem/Package/TarReader.html
     #
     # @param tar_name [String] Name of tar file to examine.
     # @return [String] containing HTML describing the contents of the `tar`.
@@ -67,7 +68,7 @@ module Jekyll
       File.open(tar_name, "rb") do |file|
         Gem::Package::TarReader.new(file) do |tar|
           contents = tar.each.map do |entry|
-            next if entry.file?
+            next unless entry.file?
 
             tar_entry(entry, file_magic)
           end
