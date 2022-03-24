@@ -30,7 +30,7 @@ module Jekyll
       source = context.registers[:site].config["source"]
       tar_name = "#{source}/#{@archive_name}"
       @logger.debug "tar_name=#{tar_name}"
-      traverse_tar(tar_name)
+      traverse_tar(tar_name).join("\n")
     end
 
     private
