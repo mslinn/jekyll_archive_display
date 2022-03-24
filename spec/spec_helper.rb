@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-require "jekyll"
+require "liquid"
+require "jekyll_plugin_logger"
+
 require_relative "../lib/archive_display"
 
 RSpec.configure do |config|
