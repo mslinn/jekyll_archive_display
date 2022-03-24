@@ -65,6 +65,7 @@ module Jekyll
     # @return [String] containing HTML describing the contents of the `tar`.
     def traverse_tar(tar_name)
       file_magic = FileMagic.new(FileMagic::MAGIC_MIME)
+      result = ""
       File.open(tar_name, "rb") do |file|
         Gem::Package::TarReader.new(file) do |tar|
           contents = tar.each.map do |entry|
@@ -77,10 +78,10 @@ module Jekyll
                    .sort_by { |entry| entry[:name] }
                    .map { |entry| display_entry entry }
                    .join("\n")
-          @logger.debug { "traverse_tar: result = #{result}" }
-          result
         end
       end
+      @logger.debug { "traverse_tar: result = #{result}" }
+      result
     end
   end
 end
