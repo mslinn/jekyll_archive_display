@@ -13,11 +13,13 @@ if [ ! -f "$1/_bin/debug" ]; then
   exit 1
 fi
 
-gem uninstall jekyll_archive_display -aIx --user-install --force
+NAME=jekyll_archive_display
+
+gem uninstall "$NAME" -aIx --user-install --force
 git add -A && git commit -m - && git push origin "$(git rev-parse --abbrev-ref HEAD)"
 
 set -e
 
 bundle exec rake install:local
-cd "$1" > /dev/null || exit 1;
+cd "$1" > /dev/null || exit 1
 _bin/debug

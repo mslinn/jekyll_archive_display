@@ -48,6 +48,12 @@ group :jekyll_plugins do
 end
 ```
 
+Also add it to `_config.yml`:
+```yaml
+plugins:
+  - jekyll_archive_display
+```
+
 Install all of the dependent gems of your Jekyll website by typing:
 
     $ bundle install

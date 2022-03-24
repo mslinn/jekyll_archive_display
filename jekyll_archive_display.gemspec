@@ -28,7 +28,6 @@ Gem::Specification.new do |spec|
   spec.description = <<~END_OF_DESC
     Jekyll tag plugin that lists the names and contents of each entry in a tar file.
   END_OF_DESC
-  spec.name = "jekyll_archive_display"
   spec.email = ["mslinn@mslinn.com"]
   spec.executables = GemSpecHelper.spec_executables(files)
   spec.files = files
@@ -41,6 +40,7 @@ Gem::Specification.new do |spec|
     "homepage_uri"      => spec.homepage,
     "source_code_uri"   => github,
   }
+  spec.name = "jekyll_archive_display"
   spec.post_install_message = <<~END_MESSAGE
 
     Thanks for installing #{spec.name}!
@@ -57,7 +57,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rubyzip"
 
   spec.add_development_dependency "debase"
-  spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rubocop-jekyll"
   spec.add_development_dependency "rubocop-rake"
   spec.add_development_dependency "rubocop-rspec"
