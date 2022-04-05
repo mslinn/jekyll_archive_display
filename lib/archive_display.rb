@@ -85,5 +85,5 @@ module Jekyll
   end
 end
 
-PluginMetaLogger.instance.info { "Loaded #{JekyllPluginArchiveDisplayName::PLUGIN_NAME} v#{JekyllArchiveDisplay::VERSION} plugin." }
+PluginMetaLogger.instance.info { "Loaded #{JekyllPluginArchiveDisplayName::PLUGIN_NAME} v#{JekyllArchiveDisplayVersion::VERSION} plugin." }
 Liquid::Template.register_tag(JekyllPluginArchiveDisplayName::PLUGIN_NAME, Jekyll::ArchiveDisplayTag)
