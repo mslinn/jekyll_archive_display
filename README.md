@@ -54,13 +54,9 @@ plugins:
   - jekyll_archive_display
 ```
 
-Install all of the dependent gems of your Jekyll website by typing:
+Install all dependent gems of your Jekyll website in the usual way:
 
     $ bundle install
-
-Or install just this one gem by typing:
-
-    $ gem install jekyll_archive_display
 
 
 ## Additional Information
@@ -77,11 +73,6 @@ You can also run `bin/console` for an interactive prompt that will allow you to 
 
 ### Build and Install Locally
 To build and install this gem onto your local machine, run:
-```shell
-$ rake install:local
-```
-
-The following also does the same thing:
 ```shell
 $ bundle exec rake install
 jekyll_archive_display 1.0.0 built to pkg/jekyll_archive_display-0.1.0.gem.
@@ -103,6 +94,7 @@ jekyll_archive_display (1.0.0)
 
     Jekyll tag plugin that lists the names and contents of each entry in a tar file.
 ```
+
 
 ### Build and Push to RubyGems
 To release a new version,

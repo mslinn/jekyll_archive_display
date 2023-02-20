@@ -1,13 +1,11 @@
 #!/usr/bin/env ruby
 
-# frozen_string_literal: true
+require 'bundler/setup'
+require 'liquid'
+require 'fileutils'
 
-require "bundler/setup"
-require "liquid"
-require "fileutils"
+gemspec_name = 'jekyll_archive_display.gemspec'
+require gemspec_name.delete_suffix '.gemspec'
 
-gemspec_name = "jekyll_archive_display.gemspec"
-require gemspec_name.delete_suffix ".gemspec"
-
-require "irb"
+require 'irb'
 IRB.start(__FILE__)

@@ -1,12 +1,10 @@
-# frozen_string_literal: true
-
-require "jekyll_plugin_logger"
-require "rubygems/package"
-require "ruby-filemagic"
-require_relative "archive_display/version"
+require 'jekyll_plugin_logger'
+require 'rubygems/package'
+require 'ruby-filemagic'
+require_relative 'archive_display/version'
 
 module JekyllPluginArchiveDisplayName
-  PLUGIN_NAME = "archive_display"
+  PLUGIN_NAME = 'archive_display'.freeze
 end
 
 # Jekyll tag plugin that displays information about the contents of tar files
@@ -26,7 +24,7 @@ module Jekyll
     # Method prescribed by the Jekyll plugin lifecycle.
     # @return [String]
     def render(context)
-      source = context.registers[:site].config["source"]
+      source = context.registers[:site].config['source']
       tar_name = "#{source}/#{@archive_name}"
       @logger.debug "tar_name=#{tar_name}"
       traverse_tar(tar_name)
@@ -47,11 +45,12 @@ module Jekyll
     def tar_entry(entry, file_magic)
       content = entry.read
       fm_type = file_magic.buffer(content)
+
       {
-        :name    => entry.full_name,
-        :content => content.strip,
-        :is_text => (fm_type.start_with? "text"),
-        :fm_type => fm_type,
+        name:    entry.full_name,
+        content: content.strip,
+        is_text: (fm_type.start_with? 'text'),
+        fm_type: fm_type,
       }
     end
 
@@ -64,8 +63,8 @@ module Jekyll
     # @return [String] containing HTML describing the contents of the `tar`.
     def traverse_tar(tar_name)
       file_magic = FileMagic.new(FileMagic::MAGIC_MIME)
-      result = ""
-      File.open(tar_name, "rb") do |file|
+      result = ''
+      File.open(tar_name, 'rb') do |file|
         Gem::Package::TarReader.new(file) do |tar|
           contents = tar.each.map do |entry|
             next unless entry.file?

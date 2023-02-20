@@ -11,7 +11,6 @@
       "remoteHost": "localhost",
       "remotePort": "1234",
       "remoteWorkspaceRoot": "/",
-      "restart": true,
       "showDebuggerOutput": true,
       "type": "Ruby",
     },
@@ -33,7 +32,6 @@
                      "--unpublished"
                    ],
       "request": "launch",
-      "restart": true,
       "showDebuggerOutput": true,
       "stopOnEntry": true,
       "type": "Ruby",

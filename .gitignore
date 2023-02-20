@@ -17,6 +17,7 @@
 .sass-cache/
 .yardoc
 .yardoc/
+/exe/
 /spec/reports/
 Notepad++/
 RUNNING_PID
