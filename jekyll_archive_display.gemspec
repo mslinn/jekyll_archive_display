@@ -10,14 +10,14 @@ Gem::Specification.new do |spec|
   END_OF_DESC
   spec.email = ['mslinn@mslinn.com']
   spec.files = Dir['.rubocop.yml', 'LICENSE.*', 'Rakefile', '{lib,spec}/**/*', '*.gemspec', '*.md']
-  spec.homepage = 'https://www.mslinn.com/blog/2020/10/03/jekyll-plugins.html#archiveDisplay'
+  spec.homepage = 'https://www.mslinn.com/jekyll/3000-jekyll-plugins.html#archiveDisplay'
   spec.license = 'MIT'
   spec.metadata = {
     'allowed_push_host' => 'https://rubygems.org',
     'bug_tracker_uri'   => "#{github}/issues",
     'changelog_uri'     => "#{github}/CHANGELOG.md",
     'homepage_uri'      => spec.homepage,
-    'source_code_uri'   => github,
+    'source_code_uri'   => github
   }
   spec.name = 'jekyll_archive_display'
   spec.post_install_message = <<~END_MESSAGE
