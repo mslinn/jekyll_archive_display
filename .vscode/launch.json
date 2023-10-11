@@ -5,49 +5,40 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "cwd": "${workspaceRoot}",
-      "name": "Attach rdebug-ide",
+      "debugPort": "0",
+      "name": "Attach rdbg",
       "request": "attach",
-      "remoteHost": "localhost",
-      "remotePort": "1234",
-      "remoteWorkspaceRoot": "/",
-      "showDebuggerOutput": true,
-      "type": "Ruby",
+      "type": "rdbg",
     },
     {
-      "cwd": "${workspaceRoot}",
-      "debuggerPort": "1234",
-      "name": "Debug Jekyll",
-      "program": "/home/mslinn/.rbenv/shims/jekyll",
-                   "args": [
-                     "serve",
-                     "--livereload_port", "35721",
-                     "--force_polling",
-                     "--host", "0.0.0.0",
-                     "--port", "4001",
-                     "--future",
-                     "--incremental",
-                     "--livereload",
-                     "--drafts",
-                     "--unpublished"
-                   ],
+      "args": [
+        "serve",
+        "--livereload_port", "35721",
+        "--force_polling",
+        "--host", "0.0.0.0",
+        "--port", "4001",
+        "--future",
+        "--incremental",
+        "--livereload",
+        "--drafts",
+        "--unpublished"
+      ],
+      "cwd": "${workspaceFolder}/demo",
+      "debugPort": "0",
+      "name": "Debug Demo",
       "request": "launch",
-      "showDebuggerOutput": true,
-      "stopOnEntry": true,
-      "type": "Ruby",
+      "script": "$./exe/jekyll",
+      "type": "rdbg",
     },
     {
       "args": [
         "-I",
         "${workspaceRoot}"
       ],
-      "cwd": "${workspaceRoot}",
       "name": "RSpec - all",
-      "program": "${workspaceRoot}/exe/rspec",
       "request": "launch",
-      "showDebuggerOutput": false,
-      "type": "Ruby",
-      "useBundler": true,
+      "script": "${workspaceRoot}/exe/rspec",
+      "type": "rdbg",
     },
     {
       "args": [
@@ -55,13 +46,10 @@
         "${workspaceRoot}",
         "${file}"
       ],
-      "cwd": "${workspaceRoot}",
       "name": "RSpec - active spec file only",
-      "program": "${workspaceRoot}/exe/rspec",
+      "script": "${workspaceRoot}/exe/rspec",
       "request": "launch",
-      "showDebuggerOutput": false,
-      "type": "Ruby",
-      "useBundler": true,
+      "type": "rdbg",
     }
   ]
 }

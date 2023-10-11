@@ -1,11 +1,11 @@
 #!/usr/bin/env ruby
 
 require 'bundler/setup'
-require 'liquid'
 require 'fileutils'
+require 'irb'
+require 'liquid'
 
 gemspec_name = 'jekyll_archive_display.gemspec'
 require gemspec_name.delete_suffix '.gemspec'
 
-require 'irb'
 IRB.start(__FILE__)
