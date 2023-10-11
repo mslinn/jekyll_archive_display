@@ -12,6 +12,7 @@ AllCops:
   Exclude:
     - exe/**/*
     - vendor/**/*
+    - demo/_site/*
     - Gemfile*
     - jekyll_archive_display.gemspec
   NewCops: enable
