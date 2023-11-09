@@ -4,8 +4,8 @@ require 'bundler/setup'
 require 'fileutils'
 require 'irb'
 require 'liquid'
+require 'jekyll'
 
-gemspec_name = 'jekyll_archive_display.gemspec'
-require gemspec_name.delete_suffix '.gemspec'
+require_relative '../lib/archive_display'
 
 IRB.start(__FILE__)

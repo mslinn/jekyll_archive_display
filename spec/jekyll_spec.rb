@@ -10,8 +10,7 @@ RSpec.describe Jekyll do
     context_
   end
 
-  it 'just a placeholder' do
-    pending 'not implemented'
+  it 'just a placeholder', skip: 'Not implemented' do
     expect(output).to eq('asdf')
   end
 end

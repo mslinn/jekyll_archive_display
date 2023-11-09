@@ -5,6 +5,26 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "args": [
+        "serve",
+        "--livereload_port", "35734",
+        "--force_polling",
+        "--host", "0.0.0.0",
+        "--port", "4016",
+        "--future",
+        "--incremental",
+        "--livereload",
+        "--drafts",
+        "--unpublished"
+      ],
+      "cwd": "${workspaceRoot}/demo",
+      "debugPort": "0",
+      "name": "Debug Demo",
+      "request": "launch",
+      "script": "${workspaceRoot}/exe/jekyll",
+      "type": "rdbg",
+    },
+    {
       "debugPort": "0",
       "name": "Attach rdbg",
       "request": "attach",
@@ -15,6 +35,7 @@
         "-I",
         "${workspaceRoot}"
       ],
+      "debugPort": "0",
       "name": "RSpec - all",
       "request": "launch",
       "script": "${workspaceRoot}/exe/rspec",
@@ -26,6 +47,7 @@
         "${workspaceRoot}",
         "${file}"
       ],
+      "debugPort": "0",
       "name": "RSpec - active spec file only",
       "script": "${workspaceRoot}/exe/rspec",
       "request": "launch",

@@ -33,7 +33,10 @@ module Jekyll
     private
 
     def display_entry(entry)
-      heading = "<div class='codeLabel'>#{entry[:name]} <span style='font-size: smaller'>(#{entry[:fm_type]})</span></div>"
+      heading = <<~END_HEAD
+        <div class='codeLabel'>#{entry[:name]} <span style='font-size: smaller'>(#{entry[:fm_type]})</span></div>
+      END_HEAD
+
       if entry[:is_text]
         "#{heading}\n<pre data-lt-active='false'>#{entry[:content]}</pre>"
       else

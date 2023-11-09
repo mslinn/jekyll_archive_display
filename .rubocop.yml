@@ -16,9 +16,11 @@ AllCops:
     - Gemfile*
     - jekyll_archive_display.gemspec
   NewCops: enable
-  TargetRubyVersion: 2.6
 
 Gemspec/RequireMFA:
+  Enabled: false
+
+Gemspec/RequiredRubyVersion:
   Enabled: false
 
 Layout/BlockAlignment:

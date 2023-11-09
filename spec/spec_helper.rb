@@ -1,4 +1,5 @@
 require 'liquid'
+require 'jekyll'
 require 'jekyll_plugin_logger'
 
 require_relative '../lib/archive_display'
