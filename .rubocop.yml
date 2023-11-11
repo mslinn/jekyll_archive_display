@@ -10,7 +10,7 @@ require:
 
 AllCops:
   Exclude:
-    - exe/**/*
+    - binstub/**/*
     - vendor/**/*
     - demo/_site/*
     - Gemfile*
