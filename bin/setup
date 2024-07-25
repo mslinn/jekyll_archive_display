@@ -15,6 +15,11 @@ if [[ $(which apt) ]]; then
   if [[ ! -f /usr/lib/x86_64-linux-gnu/libyaml.so ]]; then sudo apt install libyaml-dev; fi
 fi
 
+if [[ -z $(bundle audit -h) ]]; then
+  gem install bundler-audit
+  bundle audit update
+fi
+
 rm -f Gemfile.lock
 if [[ -z "$( which bundle )" ]]; then gem install bundler; fi
 export BUNDLE_WITH=development
@@ -34,3 +39,5 @@ fi
 for X in debug jekyll rake rspec-core rubocop; do
   bundle binstubs "$X" --force --path binstub
 done
+
+bundle audit check
