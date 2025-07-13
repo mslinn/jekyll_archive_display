@@ -16,7 +16,7 @@ if [[ $(which apt) ]]; then
 fi
 
 if [[ -z $(bundle audit -h) ]]; then
-  gem install bundler-audit
+  gem install bundle-audit
   bundle audit update
 fi
 
